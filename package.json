@@ -10,10 +10,27 @@
     "test": "standard && npm run test-deps",
     "test-deps": "dependency-check . && dependency-check . --extra --no-dev -i tachyons"
   },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "global": true,
+          "presets": [
+            "env"
+          ]
+        }
+      ]
+    ]
+  },
   "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babelify": "^8.0.0",
     "choo": "^6.5.1",
     "choo-devtools": "^2.1.0",
     "choo-service-worker": "^2.3.0",
+    "lit-html": "^0.7.1",
     "sheetify": "^6.2.0",
     "tachyons": "^4.8.1"
   },
